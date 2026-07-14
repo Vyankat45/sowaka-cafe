@@ -1,5 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Import new local videos added by the user
+import reelVideo1 from '../assets/Barista_preparing_coffee_for_Sowaka_202607141446.mp4';
+import reelVideo2 from '../assets/Cappuccino_advertisement_for_Sow._202607141446.mp4';
+import reelVideo3 from '../assets/Coffee_advertisement_Sowaka_Cafe_202607141447.mp4';
+import reelVideo4 from '../assets/Coffee_beans_falling_on_table_202607141447.mp4';
+import reelVideo5 from '../assets/Coffee_pour-over_commercial_Sowa._202607141447.mp4';
+import reelVideo6 from '../assets/Sowaka_Cafe_closing_advertisement_202607141446.mp4';
+import reelVideo7 from '../assets/Barista_pours_coffee_beans_grinder_202607141432_gwr_video_mvp (1).mp4';
+
+// Import local assets to use as poster fallbacks
+import coffee1 from '../assets/cold_brew.jpg';
+import coffee2 from '../assets/rohan.jpg';
+import coffee3 from '../assets/coffee_branded_1.jpg';
+import coffee4 from '../assets/hero_cold_cappuccino.png';
+import coffee5 from '../assets/pistachio_mocha.jpg';
+import coffee6 from '../assets/espresso_romano.jpg';
+import coffee7 from '../assets/hazelnut_frappe.jpg';
 
 const Instagram = (props) => (
   <svg
@@ -19,44 +37,101 @@ const Instagram = (props) => (
 );
 
 export default function Reels() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(3);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const timeoutRef = useRef(null);
 
-  const reelsData = [
+  const baseReelsData = [
     {
       id: 0,
-      link: 'https://www.instagram.com/p/DXj1pmSjW8k/',
+      link: reelVideo1,
+      poster: coffee1,
     },
     {
       id: 1,
-      link: 'https://www.instagram.com/p/DXeevWBjbL9/',
+      link: reelVideo2,
+      poster: coffee2,
     },
     {
       id: 2,
-      link: 'https://www.instagram.com/p/DXbdAbCDZDx/',
+      link: reelVideo3,
+      poster: coffee3,
     },
     {
       id: 3,
-      link: 'https://www.instagram.com/p/DZH81YhgeSU/',
+      link: reelVideo4,
+      poster: coffee4,
+    },
+    {
+      id: 4,
+      link: reelVideo5,
+      poster: coffee5,
+    },
+    {
+      id: 5,
+      link: reelVideo6,
+      poster: coffee6,
+    },
+    {
+      id: 6,
+      link: reelVideo7,
+      poster: coffee7,
     }
   ];
 
-  // Auto-looping carousel every 5 seconds, pauses when hovered
+  // Clone array to allow seamless infinite loops
+  const reelsData = [
+    ...baseReelsData.slice(-3), // Pad 3 items at start
+    ...baseReelsData,
+    ...baseReelsData,
+    ...baseReelsData.slice(0, 3) // Pad 3 items at end
+  ];
+
+  // Auto-play the carousel, pause on hover
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reelsData.length);
-    }, 5000);
+      handleNext();
+    }, 4500);
     return () => clearInterval(timer);
-  }, [reelsData.length, isPaused]);
+  }, [isPaused, isTransitioning]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % reelsData.length);
+  const handleNext = () => {
+    setCurrentIndex((prev) => prev + 1);
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + reelsData.length) % reelsData.length);
+  const handlePrev = () => {
+    setCurrentIndex((prev) => prev - 1);
   };
+
+  // Boundary check to reset the position silently (for 7 items, max offset is 10 and min offset is 2)
+  useEffect(() => {
+    if (currentIndex === 10) {
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(3);
+      }, 700); // Wait for transition duration
+    } else if (currentIndex === 2) {
+      timeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(9);
+      }, 700);
+    } else {
+      setIsTransitioning(true);
+    }
+    return () => clearTimeout(timeoutRef.current);
+  }, [currentIndex]);
+
+  // Re-enable transitions after reset
+  useEffect(() => {
+    if (!isTransitioning) {
+      const raf = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [isTransitioning]);
 
   // Calculate items per view for transform logic
   const getTransformPercentage = () => {
@@ -64,88 +139,86 @@ export default function Reels() {
       if (window.innerWidth < 640) return currentIndex * 100;
       if (window.innerWidth < 1024) return currentIndex * 50;
     }
-    // Default desktop: show 3, so slide by 33.33% per index
-    // However, if we are at the last index and only have 4 items, we might see empty space.
-    // To prevent empty space, we cap the max index
-    const maxIndex = Math.max(0, reelsData.length - 3);
-    const safeIndex = Math.min(currentIndex, maxIndex);
-    return safeIndex * (100 / 3);
+    return currentIndex * (100 / 3);
   };
 
   return (
-    <section id="reels" className="py-12 md:py-24 bg-brand-soft-white border-b border-brand-sand scroll-mt-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
-        {/* Section Header */}
-        <div className="space-y-4 max-w-xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 bg-brand-cream border border-brand-sand px-4 py-2 rounded-full shadow-sm mx-auto">
-            <Instagram className="w-4 h-4 text-brand-brown" />
-            <span className="text-brand-brown text-xs font-bold uppercase tracking-widest pt-0.5">Sowaka Reels</span>
+    <section id="reels" className="py-16 md:py-32 bg-[#F5F2EB] border-y border-brand-sand scroll-mt-12 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="space-y-6 max-w-xl mx-auto mb-20">
+          <div className="inline-flex items-center space-x-2 bg-white border border-brand-sand px-5 py-2.5 rounded-full shadow-md mx-auto transform hover:scale-105 transition-transform duration-300">
+            <Instagram className="w-5 h-5 text-brand-brown" />
+            <span className="text-brand-brown text-[11px] font-black uppercase tracking-[0.25em] pt-0.5">Sowaka on Instagram</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
-            Sowaka Moments
+          <h2 className="text-4xl md:text-6xl font-black text-brand-brown tracking-tight">
+            Visual <span className="text-brand-yellow drop-shadow-sm">Storytelling</span>
           </h2>
-          <p className="text-brand-brown/70">
-            Watch our Instagram reels directly here. Catch a glimpse of Rohan crafting your coffee.
+          <p className="text-brand-brown/70 text-lg max-w-md mx-auto font-medium">
+            Immerse yourself in the art of the pour. Watch our signature creations come to life.
           </p>
         </div>
 
-        {/* Carousel Container */}
         <div 
-          className="relative max-w-6xl mx-auto"
+          className="relative max-w-6xl mx-auto group"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          
-          {/* Controls */}
-          <div className="absolute inset-y-0 -left-4 md:-left-12 flex items-center z-10">
+          <div className="absolute inset-y-0 -left-4 md:-left-8 flex items-center z-20 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button 
-              onClick={prevSlide}
-              className="bg-brand-yellow text-brand-brown p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
+              onClick={handlePrev}
+              className="bg-white/90 backdrop-blur-md text-brand-brown p-4 rounded-full shadow-lg border border-brand-sand hover:bg-brand-yellow hover:scale-110 transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
           </div>
           
-          <div className="absolute inset-y-0 -right-4 md:-right-12 flex items-center z-10">
+          <div className="absolute inset-y-0 -right-4 md:-right-8 flex items-center z-20 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button 
-              onClick={nextSlide}
-              className="bg-brand-yellow text-brand-brown p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
+              onClick={handleNext}
+              className="bg-white/90 backdrop-blur-md text-brand-brown p-4 rounded-full shadow-lg border border-brand-sand hover:bg-brand-yellow hover:scale-110 transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
 
-          {/* Sliding Track */}
-          <div className="overflow-hidden w-full py-4">
+          <div className="overflow-visible w-full py-6">
             <div 
-              className="flex transition-transform duration-700 ease-in-out"
+              className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
               style={{ transform: `translateX(-${getTransformPercentage()}%)` }}
             >
-              {reelsData.map((reel) => (
-                <div 
-                  key={reel.id}
-                  className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
-                >
-                  <div className="bg-brand-cream rounded-3xl overflow-hidden border border-brand-sand shadow-lg flex flex-col justify-center items-center p-2 h-[600px]">
-                    {/* Instagram Embed iframe */}
-                    <iframe 
-                      src={`${reel.link}embed`}
-                      width="100%" 
-                      height="100%" 
-                      frameBorder="0" 
-                      scrolling="no" 
-                      allowTransparency="true"
-                      allow="encrypted-media"
-                      className="rounded-2xl"
-                      title={`Instagram Reel ${reel.id}`}
-                    ></iframe>
+              {reelsData.map((reel, idx) => {
+                const isCenter = typeof window !== 'undefined' && window.innerWidth >= 1024 
+                  ? idx === currentIndex + 1
+                  : idx === currentIndex;
+
+                return (
+                  <div 
+                    key={`${reel.id}-${idx}`}
+                    className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-4 md:px-6 transition-all duration-700 ease-in-out"
+                    style={{
+                      transform: isCenter ? 'scale(1.05)' : 'scale(0.95)',
+                      opacity: isCenter ? 1 : 0.6
+                    }}
+                  >
+                    <div className="relative bg-black rounded-[2.5rem] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col justify-center items-center p-0 h-[500px] sm:h-[600px] transition-all duration-500 hover:border-brand-yellow hover:shadow-[0_20px_50px_rgba(254,205,7,0.2)]">
+                      <div className="absolute inset-0 bg-brand-cream animate-pulse -z-10"></div>
+                      
+                      {/* Native HTML5 Video element pointing to local MP4 paths */}
+                      <video 
+                        src={reel.link}
+                        poster={reel.poster}
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover rounded-[2.2rem] opacity-95 hover:opacity-100 transition-opacity duration-500"
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
-
         </div>
       </div>
     </section>
