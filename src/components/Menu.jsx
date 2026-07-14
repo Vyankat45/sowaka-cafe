@@ -122,16 +122,13 @@ export default function Menu() {
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="flex overflow-x-auto pb-4 md:pb-0 md:flex-wrap md:justify-center gap-3 mb-16 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] -mx-4 px-4 snap-x snap-mandatory">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm border ${
-                selectedCategory === category
-                  ? 'bg-brand-brown text-brand-yellow border-brand-brown scale-105 shadow-md'
-                  : 'bg-white text-brand-brown border-brand-sand hover:bg-brand-cream'
-              }`}
+              className="flex-shrink-0 snap-start px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm border data-[active=true]:bg-brand-brown data-[active=true]:text-brand-yellow data-[active=true]:border-brand-brown data-[active=true]:scale-105 data-[active=true]:shadow-md data-[active=false]:bg-white data-[active=false]:text-brand-brown data-[active=false]:border-brand-sand data-[active=false]:hover:bg-brand-cream"
+              data-active={selectedCategory === category}
             >
               {category}
             </button>
