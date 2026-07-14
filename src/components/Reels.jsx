@@ -36,6 +36,34 @@ const Instagram = (props) => (
   </svg>
 );
 
+// Sub-component to manage playing/pausing a single video card dynamically
+const ReelCard = ({ link, poster, isActive }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (isActive) {
+      videoRef.current.play().catch((err) => {
+        console.log("Video auto-play was interrupted or blocked:", err);
+      });
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isActive]);
+
+  return (
+    <video 
+      ref={videoRef}
+      src={link}
+      poster={poster}
+      loop 
+      muted 
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover rounded-[2.2rem] opacity-95 hover:opacity-100 transition-opacity duration-500"
+    />
+  );
+};
+
 export default function Reels() {
   const [currentIndex, setCurrentIndex] = useState(3);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -203,15 +231,11 @@ export default function Reels() {
                     <div className="relative bg-black rounded-[2.5rem] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col justify-center items-center p-0 h-[500px] sm:h-[600px] transition-all duration-500 hover:border-brand-yellow hover:shadow-[0_20px_50px_rgba(254,205,7,0.2)]">
                       <div className="absolute inset-0 bg-brand-cream animate-pulse -z-10"></div>
                       
-                      {/* Native HTML5 Video element pointing to local MP4 paths */}
-                      <video 
-                        src={reel.link}
+                      {/* Sub-component to manage active/inactive play state */}
+                      <ReelCard 
+                        link={reel.link}
                         poster={reel.poster}
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover rounded-[2.2rem] opacity-95 hover:opacity-100 transition-opacity duration-500"
+                        isActive={isCenter}
                       />
                     </div>
                   </div>
