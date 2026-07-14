@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -14,6 +15,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-brand-soft-white min-h-screen text-brand-brown antialiased selection:bg-brand-yellow selection:text-brand-brown flex flex-col">
         {/* Persistent Navbar across all pages */}
         <Navbar />
