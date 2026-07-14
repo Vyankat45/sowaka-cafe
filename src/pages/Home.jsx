@@ -109,6 +109,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Delivery Partners Section */}
+      <section className="py-12 bg-brand-soft-white border-b border-brand-sand">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white/80 p-8 md:p-10 rounded-3xl border border-brand-sand shadow-sm space-y-5 max-w-3xl mx-auto">
+            <p className="text-xs md:text-sm uppercase font-extrabold tracking-widest text-brand-brown/60">
+              Order Delivery From Our Partners
+            </p>
+            <div className="flex justify-center">
+              <a
+                href="https://www.zomato.com"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#E23744] border border-[#E23744] px-10 py-4 rounded-full text-base font-bold text-white hover:bg-[#cb303b] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center space-x-2"
+              >
+                <span>Order on Zomato</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Reviews />
     </>
   );
