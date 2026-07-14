@@ -47,7 +47,7 @@ export default function Story() {
 
             <div className="space-y-4 text-brand-brown/80 leading-relaxed text-base">
               <p>
-                Founded by **Rohan**, Sowaka Café was born out of a simple, beautiful vision: to create a cozy, neighborhood haven where every cup of coffee feels like a handcrafted gift. The name "Sowaka" and our signature logo—a cursive script paired with a fingerprint heart—represent this core philosophy: <strong>your coffee is personal, handcrafted, and made from the heart.</strong>
+                Founded by <strong>Rohan</strong>, Sowaka Café was born out of a simple, beautiful vision: to create a cozy, neighborhood haven where every cup of coffee feels like a handcrafted gift. The name "Sowaka" and our signature logo—a cursive script paired with a fingerprint heart—represent this core philosophy: <strong>your coffee is personal, handcrafted, and made from the heart.</strong>
               </p>
               
               <p>
