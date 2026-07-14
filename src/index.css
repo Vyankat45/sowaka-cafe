@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+  --font-script: 'Caveat', cursive;
+  
+  --color-brand-yellow: #FECD07;
+  --color-brand-brown: #4A0D00;
+  --color-brand-brown-light: #5E1403;
+  --color-brand-cream: #FAF6F0;
+  --color-brand-sand: #EFE9DE;
+  --color-brand-soft-white: #FCFAF7;
+}
+
+/* Custom styles and animations */
+@layer base {
+  body {
+    background-color: var(--color-brand-soft-white);
+    color: var(--color-brand-brown);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+/* Steam animation */
+@keyframes steam-rise {
+  0% { transform: translateY(0px) scaleX(1); opacity: 0; }
+  15% { opacity: 0.3; }
+  50% { transform: translateY(-30px) scaleX(1.1); opacity: 0.2; }
+  80% { opacity: 0.1; }
+  100% { transform: translateY(-60px) scaleX(1.3); opacity: 0; }
+}
+
+.animate-steam-1 {
+  animation: steam-rise 4s ease-in-out infinite;
+}
+.animate-steam-2 {
+  animation: steam-rise 5s ease-in-out infinite 1.5s;
+}
+.animate-steam-3 {
+  animation: steam-rise 6s ease-in-out infinite 3s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-brown);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-brown-light);
+}
