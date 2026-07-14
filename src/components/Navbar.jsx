@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logoImg from '../assets/logo.jpg';
 import { Menu as MenuIcon, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Instagram = (props) => (
   <svg
@@ -36,11 +37,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Menu', href: '#menu' },
-    { name: 'Our Story', href: '#story' },
-    { name: 'Reels', href: '#reels' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Menu', href: '/menu' },
+    { name: 'Our Story', href: '/story' },
+    { name: 'Reels', href: '/reels' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -52,7 +54,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Badge */}
-          <a href="#home" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-yellow shadow-md transition-transform duration-300 group-hover:scale-105">
               <img 
                 src={logoImg} 
@@ -63,19 +65,19 @@ export default function Navbar() {
             <span className="font-script text-3xl font-bold text-brand-brown hover:text-brand-brown-light transition-colors duration-200">
               Sowaka
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-brand-brown font-medium hover:text-brand-yellow transition-colors duration-200 relative group py-2"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -90,12 +92,12 @@ export default function Navbar() {
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="bg-brand-brown text-brand-yellow px-5 py-2.5 rounded-full font-semibold hover:bg-brand-yellow hover:text-brand-brown transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               Visit Café
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,23 +126,23 @@ export default function Navbar() {
       }`}>
         <div className="px-4 pt-2 pb-6 space-y-2 bg-brand-cream/80 backdrop-blur-sm">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block px-4 py-3 rounded-xl text-brand-brown font-medium hover:bg-brand-yellow/20 hover:text-brand-brown-light transition-all duration-200"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <div className="pt-4 border-t border-brand-sand px-4">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-center bg-brand-brown text-brand-yellow py-3 rounded-full font-semibold hover:bg-brand-yellow hover:text-brand-brown transition-all duration-300 shadow-md"
             >
               Visit Café
-            </a>
+            </Link>
           </div>
         </div>
       </div>

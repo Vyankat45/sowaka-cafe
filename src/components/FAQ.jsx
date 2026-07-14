@@ -15,7 +15,7 @@ export default function FAQ() {
     },
     {
       question: "Where is Sowaka Café located?",
-      answer: "Our physical café is situated in Bandra East at Maa Ashapura CHS, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051. Stop by to enjoy a cozy workspace, premium brews, and a friendly neighborhood environment."
+      answer: "Our physical café is situated in Bandra East at WING-A, PRIME SERVICED ASHAPURA CHS, B, Maa Ashapura Cooperative Housing Society, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051. Stop by to enjoy a cozy workspace, premium brews, and a friendly neighborhood environment."
     },
     {
       question: "What are your opening hours?",

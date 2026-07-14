@@ -88,11 +88,11 @@ export default function Footer() {
             <div className="space-y-3 text-xs text-brand-soft-white/80">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-brand-yellow shrink-0 mt-0.5" />
-                <span>Maa Ashapura CHS, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051</span>
+                <span>WING-A, PRIME SERVICED ASHAPURA CHS, B, Maa Ashapura Cooperative Housing Society, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-brand-yellow shrink-0" />
-                <a href="tel:+919930055555" className="hover:underline">+91 99300 55555</a>
+                <a href="tel:+918369643876" className="hover:underline">+91 83696 43876</a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-brand-yellow shrink-0" />

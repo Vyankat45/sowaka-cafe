@@ -1,51 +1,39 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Menu from './components/Menu';
-import PromoBand from './components/PromoBand';
-import Story from './components/Story';
-import Reels from './components/Reels';
-import Reviews from './components/Reviews';
-import Contact from './components/Contact';
-import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import MenuPage from './pages/MenuPage';
+import StoryPage from './pages/StoryPage';
+import ReelsPage from './pages/ReelsPage';
+import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="bg-brand-soft-white min-h-screen text-brand-brown antialiased selection:bg-brand-yellow selection:text-brand-brown">
-      {/* Sticky Header Nav */}
-      <Navbar />
+    <Router>
+      <div className="bg-brand-soft-white min-h-screen text-brand-brown antialiased selection:bg-brand-yellow selection:text-brand-brown flex flex-col">
+        {/* Persistent Navbar across all pages */}
+        <Navbar />
 
-      {/* Main Content Layout */}
-      <main>
-        {/* 1. Hero Showcase */}
-        <Hero />
+        {/* Page Content injected here based on URL */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<MenuPage />} />
+            <Route path="/story" element={<StoryPage />} />
+            <Route path="/reels" element={<ReelsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
 
-        {/* 2. Menu selection grid with logo badges */}
-        <Menu />
-
-        {/* 3. Seasonal Promo strip */}
-        <PromoBand />
-
-        {/* 4. Owner Backstory */}
-        <Story />
-
-        {/* 5. Instagram Reels Showcase */}
-        <Reels />
-
-        {/* 6. Guest Testimonial Reviews */}
-        <Reviews />
-
-        {/* 7. Accordion Q&A for AIO */}
-        <FAQ />
-
-        {/* 8. Contact Details & Maps & Form */}
-        <Contact />
-      </main>
-
-      {/* Footer Details */}
-      <Footer />
-    </div>
+        {/* Persistent Footer across all pages */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

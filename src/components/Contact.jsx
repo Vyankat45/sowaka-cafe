@@ -84,11 +84,11 @@ export default function Contact() {
                 <div className="space-y-3 text-sm text-brand-brown/80">
                   <div className="flex items-start space-x-2">
                     <span className="font-semibold text-brand-brown-light">Address:</span>
-                    <span>Maa Ashapura CHS, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051</span>
+                    <span>WING-A, PRIME SERVICED ASHAPURA CHS, B, Maa Ashapura Cooperative Housing Society, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="font-semibold text-brand-brown-light">Phone:</span>
-                    <a href="tel:+919930055555" className="hover:underline text-brand-brown font-bold">+91 99300 55555</a>
+                    <a href="tel:+918369643876" className="hover:underline text-brand-brown font-bold">+91 83696 43876</a>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="font-semibold text-brand-brown-light">Email:</span>
@@ -119,14 +119,16 @@ export default function Contact() {
                 Order Delivery From Our Partners
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                {['UberEats', 'DoorDash', 'Grubhub'].map((partner) => (
-                  <button
+                {['Zomato'].map((partner) => (
+                  <a
                     key={partner}
-                    onClick={() => alert(`Redirecting mock delivery query for ${partner} to Sowaka Cafe...`)}
-                    className="bg-brand-cream border border-brand-sand px-5 py-2.5 rounded-full text-xs font-bold text-brand-brown hover:bg-brand-yellow hover:border-brand-yellow hover:shadow-md transition-all duration-300"
+                    href="https://www.zomato.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-[#E23744] border border-[#E23744] px-8 py-3 rounded-full text-sm font-bold text-white hover:bg-[#cb303b] hover:shadow-md transition-all duration-300 flex items-center space-x-2"
                   >
-                    {partner}
-                  </button>
+                    <span>Order on {partner}</span>
+                  </a>
                 ))}
               </div>
             </div>
