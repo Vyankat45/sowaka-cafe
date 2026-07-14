@@ -73,7 +73,7 @@ export default function Reels() {
   };
 
   return (
-    <section id="reels" className="py-24 bg-brand-soft-white border-b border-brand-sand scroll-mt-12 overflow-hidden">
+    <section id="reels" className="py-12 md:py-24 bg-brand-soft-white border-b border-brand-sand scroll-mt-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Section Header */}
@@ -82,7 +82,7 @@ export default function Reels() {
             <Instagram className="w-4 h-4 text-brand-brown" />
             <span className="text-brand-brown text-xs font-bold uppercase tracking-widest pt-0.5">Sowaka Reels</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
             Sowaka Moments
           </h2>
           <p className="text-brand-brown/70">

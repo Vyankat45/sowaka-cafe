@@ -107,13 +107,13 @@ export default function Menu() {
   };
 
   return (
-    <section id="menu" className="py-24 bg-brand-soft-white border-b border-brand-sand scroll-mt-12">
+    <section id="menu" className="py-12 md:py-24 bg-brand-soft-white border-b border-brand-sand scroll-mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Section Heading */}
         <div className="space-y-4 max-w-xl mx-auto mb-16">
           <p className="font-script text-3xl text-brand-yellow font-bold">Menu Showcase</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
             Discover Our Coffee Blends
           </h2>
           <p className="text-brand-brown/70">

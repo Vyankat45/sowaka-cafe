@@ -4,7 +4,7 @@ import { Heart, Sparkles, Quote } from 'lucide-react';
 
 export default function Story() {
   return (
-    <section id="story" className="py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
+    <section id="story" className="py-12 md:py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -41,7 +41,7 @@ export default function Story() {
               <span className="font-script text-2xl text-brand-brown font-semibold leading-none pt-1">Our Heart & Soul</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
               Meet Rohan & The Story Behind Sowaka Café
             </h2>
 

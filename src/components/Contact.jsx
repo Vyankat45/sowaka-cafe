@@ -37,13 +37,13 @@ export default function Contact() {
   const mapEmbedUrl = "https://maps.google.com/maps?q=Maa+Ashapura+Cooperative+Housing+Society,+Kala+Nagar,+Bandra+East,+Mumbai,+Maharashtra+400051&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
   return (
-    <section id="contact" className="py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
+    <section id="contact" className="py-12 md:py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="space-y-4 max-w-xl mx-auto mb-16 text-center">
           <p className="font-script text-3xl text-brand-yellow font-bold">Find Us & Ask Rohan</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
             Contact & Location
           </h2>
           <p className="text-brand-brown/70">
@@ -136,7 +136,7 @@ export default function Contact() {
 
           {/* Contact Form (Right) - Takes 5 cols */}
           <div className="lg:col-span-5 text-left">
-            <div className="bg-white p-8 rounded-3xl border border-brand-sand shadow-xl space-y-6">
+            <div className="bg-white p-6 md:p-8 rounded-3xl border border-brand-sand shadow-xl space-y-6">
               <h3 className="text-2xl font-bold text-brand-brown">Send Rohan a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -165,7 +165,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="E.g., Sarah Smith"
                     required
-                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-sm text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200"
+                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-base text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="sarah@example.com"
                     required
-                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-sm text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200"
+                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-base text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200"
                   />
                 </div>
 
@@ -206,7 +206,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Write your note to Rohan here..."
                     required
-                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-sm text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200"
+                    className="w-full bg-brand-cream/50 border border-brand-sand rounded-xl px-4 py-3 text-base text-brand-brown focus:outline-none focus:border-brand-brown focus:bg-white transition-all duration-200 resize-none"
                   ></textarea>
                 </div>
 

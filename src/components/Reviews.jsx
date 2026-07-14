@@ -34,7 +34,7 @@ export default function Reviews() {
   ];
 
   return (
-    <section id="reviews" className="py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
+    <section id="reviews" className="py-12 md:py-24 bg-brand-cream border-b border-brand-sand scroll-mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -43,7 +43,7 @@ export default function Reviews() {
             <MessageSquare className="w-4 h-4 text-brand-yellow" />
             <span className="text-brand-brown text-xs font-bold uppercase tracking-widest pt-0.5">Guest Reviews</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
             What Our Guests Say
           </h2>
           <p className="text-brand-brown/70">

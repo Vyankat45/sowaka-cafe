@@ -67,7 +67,7 @@ export default function Hero() {
             </h3>
             
             <h1 
-              className="text-[5.5rem] md:text-[6rem] lg:text-[7.5rem] font-black text-[#4A0D00] leading-[0.9] tracking-tighter drop-shadow-sm animate-fade-in-up" 
+              className="text-6xl md:text-[6rem] lg:text-[7.5rem] font-black text-[#4A0D00] leading-[0.9] tracking-tighter drop-shadow-sm animate-fade-in-up" 
               key={`title-${currentSlide}`}
               dangerouslySetInnerHTML={{ __html: slides[currentSlide].title }}
             >
@@ -100,7 +100,7 @@ export default function Hero() {
           </div>
           
           {/* Right Image */}
-          <div className="order-1 md:order-2 relative flex justify-center md:justify-end items-center -mr-0 md:-mr-16 h-[350px] md:h-[500px]">
+          <div className="order-1 md:order-2 relative flex justify-center md:justify-end items-center -mr-0 md:-mr-16 h-[250px] md:h-[500px]">
             {slides.map((slide, idx) => (
               <img 
                 key={`img-${idx}`}
