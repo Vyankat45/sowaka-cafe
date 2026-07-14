@@ -6,15 +6,15 @@ export default function FAQ() {
 
   const faqData = [
     {
-      question: "Who is the owner of Sowarka Café?",
-      answer: "Sowarka Café is founded and operated by Rohan, who oversees our flavor profiles and serves as our head barista. Rohan created the brand around the idea of handcrafted, signature beverages (symbolized by the fingerprint heart in our logo)."
+      question: "Who is the owner of Sowaka Café?",
+      answer: "Sowaka Café is founded and operated by Rohan, who oversees our flavor profiles and serves as our head barista. Rohan created the brand around the idea of handcrafted, signature beverages (symbolized by the fingerprint heart in our logo)."
     },
     {
-      question: "What are the signature drinks at Sowarka Café?",
-      answer: "We recommend starting with Rohan's three signature recipes: our Artisan Hot Chocolate (topped with chocolate chips and premium cocoa powder), the Iced Sowarka Latte (cold espresso over ice), and our seasonal Salted Caramel Iced Coffee."
+      question: "What are the signature drinks at Sowaka Café?",
+      answer: "We recommend starting with Rohan's three signature recipes: our Artisan Hot Chocolate (topped with chocolate chips and premium cocoa powder), the Iced Sowaka Latte (cold espresso over ice), and our seasonal Salted Caramel Iced Coffee."
     },
     {
-      question: "Where is Sowarka Café located?",
+      question: "Where is Sowaka Café located?",
       answer: "Our physical café is situated in Bandra East at Maa Ashapura CHS, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051. Stop by to enjoy a cozy workspace, premium brews, and a friendly neighborhood environment."
     },
     {
@@ -22,7 +22,7 @@ export default function FAQ() {
       answer: "We are open Monday through Friday from 7:00 AM to 7:00 PM, and on weekends (Saturday and Sunday) from 8:00 AM to 6:00 PM. We roast and brew fresh every single day."
     },
     {
-      question: "Can I host an event or inquire about bulk catering with Sowarka?",
+      question: "Can I host an event or inquire about bulk catering with Sowaka?",
       answer: "Yes, absolutely! Rohan designs custom catering menus and mobile drink bars for weddings, corporate events, and parties. You can send a request through our Contact Form below, and we will get back to you with options."
     }
   ];

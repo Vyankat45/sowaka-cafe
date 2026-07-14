@@ -98,7 +98,7 @@ export default function PromoBand() {
               <div className="absolute top-4 right-4 w-14 h-14 rounded-full overflow-hidden border-2 border-brand-yellow shadow-lg transform -rotate-12 bg-white">
                 <img 
                   src={logoImg} 
-                  alt="Sowarka logo badge" 
+                  alt="Sowaka logo badge" 
                   className="w-full h-full object-cover"
                 />
               </div>

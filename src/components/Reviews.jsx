@@ -6,7 +6,7 @@ export default function Reviews() {
     {
       name: "Amit Shinde",
       role: "Bandra Resident",
-      review: "Rohan's Iced Sowarka Latte is hands down the best in Mumbai! Truly handcrafted and rich. The atmosphere in Bandra East is so cozy and makes for the perfect workspace.",
+      review: "Rohan's Iced Sowaka Latte is hands down the best in Mumbai! Truly handcrafted and rich. The atmosphere in Bandra East is so cozy and makes for the perfect workspace.",
       rating: 5,
       date: "2 days ago"
     },
@@ -20,7 +20,7 @@ export default function Reviews() {
     {
       name: "Kabir Roy",
       role: "Coffee Enthusiast",
-      review: "Stumbled upon Sowarka Cafe last week. The Salted Caramel Iced Coffee is perfectly balanced, not overly sweet. Rohan really knows his roast profiles and bean selections.",
+      review: "Stumbled upon Sowaka Cafe last week. The Salted Caramel Iced Coffee is perfectly balanced, not overly sweet. Rohan really knows his roast profiles and bean selections.",
       rating: 5,
       date: "3 days ago"
     },
@@ -47,7 +47,7 @@ export default function Reviews() {
             What Our Guests Say
           </h2>
           <p className="text-brand-brown/70">
-            Read authentic experiences from coffee lovers who visit Rohan's Sowarka Café in Mumbai.
+            Read authentic experiences from coffee lovers who visit Rohan's Sowaka Café in Mumbai.
           </p>
         </div>
 

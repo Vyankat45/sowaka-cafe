@@ -92,7 +92,7 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="font-semibold text-brand-brown-light">Email:</span>
-                    <a href="mailto:rohan@sowarkacafe.com" className="hover:underline text-brand-brown font-bold">rohan@sowarkacafe.com</a>
+                    <a href="mailto:rohan@sowakacafe.com" className="hover:underline text-brand-brown font-bold">rohan@sowakacafe.com</a>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function Contact() {
             {/* Interactive Map Embed */}
             <div className="w-full h-80 rounded-3xl overflow-hidden border border-brand-sand shadow-md relative bg-brand-sand">
               <iframe
-                title="Sowarka Café Location Map - 1208 Pine St, Seattle, WA"
+                title="Sowaka Café Location Map - 1208 Pine St, Seattle, WA"
                 src={mapEmbedUrl}
                 width="100%"
                 height="100%"
@@ -122,7 +122,7 @@ export default function Contact() {
                 {['UberEats', 'DoorDash', 'Grubhub'].map((partner) => (
                   <button
                     key={partner}
-                    onClick={() => alert(`Redirecting mock delivery query for ${partner} to Sowarka Cafe...`)}
+                    onClick={() => alert(`Redirecting mock delivery query for ${partner} to Sowaka Cafe...`)}
                     className="bg-brand-cream border border-brand-sand px-5 py-2.5 rounded-full text-xs font-bold text-brand-brown hover:bg-brand-yellow hover:border-brand-yellow hover:shadow-md transition-all duration-300"
                   >
                     {partner}

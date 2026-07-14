@@ -17,7 +17,7 @@ export default function Story() {
               <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 group">
                 <img 
                   src={rohanImg} 
-                  alt="Rohan, Founder of Sowarka Café" 
+                  alt="Rohan, Founder of Sowaka Café" 
                   className="w-full aspect-[4/5] object-cover object-top transition-transform duration-500 group-hover:scale-102"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-brown/40 to-transparent"></div>
@@ -42,12 +42,12 @@ export default function Story() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
-              Meet Rohan & The Story Behind Sowarka Café
+              Meet Rohan & The Story Behind Sowaka Café
             </h2>
 
             <div className="space-y-4 text-brand-brown/80 leading-relaxed text-base">
               <p>
-                Founded by **Rohan**, Sowarka Café was born out of a simple, beautiful vision: to create a cozy, neighborhood haven where every cup of coffee feels like a handcrafted gift. The name "Sowarka" and our signature logo—a cursive script paired with a fingerprint heart—represent this core philosophy: <strong>your coffee is personal, handcrafted, and made from the heart.</strong>
+                Founded by **Rohan**, Sowaka Café was born out of a simple, beautiful vision: to create a cozy, neighborhood haven where every cup of coffee feels like a handcrafted gift. The name "Sowaka" and our signature logo—a cursive script paired with a fingerprint heart—represent this core philosophy: <strong>your coffee is personal, handcrafted, and made from the heart.</strong>
               </p>
               
               <p>
@@ -55,7 +55,7 @@ export default function Story() {
               </p>
 
               <p>
-                When you visit Sowarka Café, you are stepping into Rohan's second home. Whether you sit at the counter to talk roast profiles or curl up in a corner with an Artisan Hot Chocolate, you are part of the Sowarka family.
+                When you visit Sowaka Café, you are stepping into Rohan's second home. Whether you sit at the counter to talk roast profiles or curl up in a corner with an Artisan Hot Chocolate, you are part of the Sowaka family.
               </p>
             </div>
 

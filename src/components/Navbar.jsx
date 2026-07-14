@@ -56,12 +56,12 @@ export default function Navbar() {
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-yellow shadow-md transition-transform duration-300 group-hover:scale-105">
               <img 
                 src={logoImg} 
-                alt="Sowarka Café Logo Badge" 
+                alt="Sowaka Café Logo Badge" 
                 className="w-full h-full object-cover"
               />
             </div>
             <span className="font-script text-3xl font-bold text-brand-brown hover:text-brand-brown-light transition-colors duration-200">
-              Sowarka
+              Sowaka
             </span>
           </a>
 
@@ -82,10 +82,10 @@ export default function Navbar() {
           {/* Right Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a 
-              href="https://instagram.com/sowarkacafe" 
+              href="https://instagram.com/sowakacafe" 
               target="_blank" 
               rel="noopener noreferrer"
-              aria-label="Follow Rohan and Sowarka Café on Instagram"
+              aria-label="Follow Rohan and Sowaka Café on Instagram"
               className="p-2 text-brand-brown hover:text-brand-yellow hover:scale-110 transition-all duration-200 bg-brand-cream rounded-full border border-brand-sand shadow-sm"
             >
               <Instagram className="w-5 h-5" />
@@ -101,7 +101,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <a 
-              href="https://instagram.com/sowarkacafe" 
+              href="https://instagram.com/sowakacafe" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2 text-brand-brown hover:text-brand-yellow bg-brand-cream rounded-full border border-brand-sand shadow-sm"

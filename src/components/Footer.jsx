@@ -46,12 +46,12 @@ export default function Footer() {
               <div className="relative w-12 h-12 rounded-full overflow-hidden border border-brand-yellow">
                 <img 
                   src={logoImg} 
-                  alt="Sowarka Cafe Logo Sticker" 
+                  alt="Sowaka Cafe Logo Sticker" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <span className="font-script text-3xl font-bold text-brand-yellow pt-1">
-                Sowarka
+                Sowaka
               </span>
             </div>
             <p className="text-sm text-brand-soft-white/70 max-w-xs leading-relaxed">
@@ -59,7 +59,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3 pt-2">
               <a 
-                href="https://instagram.com/sowarkacafe" 
+                href="https://instagram.com/sowakacafe" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Instagram Link"
@@ -96,7 +96,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-brand-yellow shrink-0" />
-                <a href="mailto:rohan@sowarkacafe.com" className="hover:underline">rohan@sowarkacafe</a>
+                <a href="mailto:rohan@sowakacafe.com" className="hover:underline">rohan@sowakacafe</a>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function Footer() {
       {/* Lower Footer: Copyright & Map GEO details */}
       <div className="border-t border-brand-brown-light py-6 text-center text-xs text-brand-soft-white/50 bg-brand-brown-light/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-          <p>© {currentYear} Sowarka Café. All rights reserved. Handcrafted by Rohan.</p>
+          <p>© {currentYear} Sowaka Café. All rights reserved. Handcrafted by Rohan.</p>
           <p className="text-[10px]">
             Bandra East Coffee Shops | Coordinates: 19.0596° N, 72.8485° E | Local Coffee Mumbai Near Me
           </p>

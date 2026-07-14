@@ -80,10 +80,10 @@ export default function Reels() {
         <div className="space-y-4 max-w-xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 bg-brand-cream border border-brand-sand px-4 py-2 rounded-full shadow-sm mx-auto">
             <Instagram className="w-4 h-4 text-brand-brown" />
-            <span className="text-brand-brown text-xs font-bold uppercase tracking-widest pt-0.5">Sowarka Reels</span>
+            <span className="text-brand-brown text-xs font-bold uppercase tracking-widest pt-0.5">Sowaka Reels</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-brand-brown tracking-tight">
-            Sowarka Moments
+            Sowaka Moments
           </h2>
           <p className="text-brand-brown/70">
             Watch our Instagram reels directly here. Catch a glimpse of Rohan crafting your coffee.

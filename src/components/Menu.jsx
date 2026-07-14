@@ -27,8 +27,8 @@ export default function Menu() {
       badgeText: 'Classic'
     },
     {
-      id: 'iced-sowarka-latte',
-      name: 'Iced Sowarka Latte',
+      id: 'iced-sowaka-latte',
+      name: 'Iced Sowaka Latte',
       category: 'Iced Coffee',
       description: 'Rich espresso and cold milk poured over ice in a tall cup. Smooth, refreshing, and handcrafted.',
       price: 220,
@@ -54,8 +54,8 @@ export default function Menu() {
       badgeText: 'Pure'
     },
     {
-      id: 'sowarka-cold-brew',
-      name: 'Sowarka Cold Brew',
+      id: 'sowaka-cold-brew',
+      name: 'Sowaka Cold Brew',
       category: 'Iced Coffee',
       description: 'Slow-steeped for 18 hours in cold filtered water to produce an exceptionally smooth, low-acid coffee taste.',
       price: 190,
@@ -160,14 +160,14 @@ export default function Menu() {
                   {item.badgeText}
                 </div>
 
-                {/* 2. Instagram Watermark Sticker Overlay (Sowarka Yellow Badge Logo) */}
+                {/* 2. Instagram Watermark Sticker Overlay (Sowaka Yellow Badge Logo) */}
                 <div 
                   className="absolute top-4 right-4 w-12 h-12 rounded-full overflow-hidden border-2 border-brand-yellow shadow-lg transform rotate-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 bg-white"
-                  title="Sowarka Café Authenticity Sticker"
+                  title="Sowaka Café Authenticity Sticker"
                 >
                   <img 
                     src={logoImg} 
-                    alt="Sowarka sticker" 
+                    alt="Sowaka sticker" 
                     className="w-full h-full object-cover"
                   />
                 </div>
